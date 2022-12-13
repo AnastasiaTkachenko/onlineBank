@@ -1971,10 +1971,14 @@ exports.isValidLogin = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var url = "".concat(undefined, "/login");
+
+// get
+// post
+// put
+// delete
 var isValidLogin = function isValidLogin(login) {
-  return _axios.default.post(url, login).then(function (_ref) {
-    var data = _ref.data;
-    return data;
+  return _axios.default.post(url, login).then(function (response) {
+    return response.data;
   });
 };
 exports.isValidLogin = isValidLogin;
@@ -4596,8 +4600,17 @@ exports.formValidation = void 0;
 var _fonk = require("@lemoncode/fonk");
 var validationSchema = {
   field: {
-    user: [_fonk.Validators.required, _fonk.Validators.email],
-    password: [_fonk.Validators.required]
+    user: [{
+      validator: _fonk.Validators.required,
+      message: 'Campo requerido'
+    }, {
+      validator: _fonk.Validators.email,
+      message: 'Email no válido'
+    }],
+    password: [{
+      validator: _fonk.Validators.required,
+      message: 'Campo requerido'
+    }]
   }
 };
 var formValidation = (0, _fonk.createFormValidation)(validationSchema);
@@ -6662,7 +6675,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64650" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65418" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
