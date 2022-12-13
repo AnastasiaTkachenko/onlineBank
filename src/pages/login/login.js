@@ -8,11 +8,12 @@ import { isValidLogin } from "./login.api";
 import { formValidation } from "./login.validations";
 import { history, routes } from "../../core/router";
 
-console.log('login page');
+
 let login = {
   user: "",
   password: "",
 };
+
 onUpdateField("user", (event) => {
   const value = event.target.value;
   login = { ...login, user: value };
