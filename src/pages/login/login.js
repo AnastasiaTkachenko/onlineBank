@@ -8,6 +8,7 @@ import { isValidLogin } from "./login.api";
 import { formValidation } from "./login.validations";
 import { history, routes } from "../../core/router";
 
+console.log('login page');
 let login = {
   user: "",
   password: "",
@@ -40,7 +41,7 @@ onSubmitForm("login-button", () => {
     onSetFormErrors(result);
     if (result.succeeded) {
       isValidLogin(login).then((isValid) => {
-         onNavigate(isValid);
+        onNavigate(isValid);
       });
     }
   });

@@ -4,7 +4,7 @@ const validationSchema = {
     user: [
       {
         validator: Validators.required,
-        message: "Campo requerido",
+        message: "Campo requerido test",
       },
       {
         validator: Validators.email,

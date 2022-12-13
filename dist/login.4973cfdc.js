@@ -4598,7 +4598,7 @@ var validationSchema = {
   field: {
     user: [{
       validator: _fonk.Validators.required,
-      message: "Campo requerido"
+      message: "Campo requerido test"
     }, {
       validator: _fonk.Validators.email,
       message: "Email no válido"
@@ -6605,6 +6605,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+console.log('login page');
 var login = {
   user: "",
   password: ""
@@ -6669,7 +6670,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64821" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65531" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
