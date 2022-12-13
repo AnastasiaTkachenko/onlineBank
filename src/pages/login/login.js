@@ -8,12 +8,10 @@ import { isValidLogin } from "./login.api";
 import { formValidation } from "./login.validations";
 import { history, routes } from "../../core/router";
 
-
 let login = {
   user: "",
   password: "",
 };
-
 onUpdateField("user", (event) => {
   const value = event.target.value;
   login = { ...login, user: value };
@@ -28,7 +26,6 @@ onUpdateField("password", (event) => {
     onSetError("password", result);
   });
 });
-
 const onNavigate = (isValid) => {
   if (isValid) {
     history.push(routes.accountList);
@@ -36,7 +33,6 @@ const onNavigate = (isValid) => {
     alert("Usuario y/o contraseña no válidos");
   }
 };
-
 onSubmitForm("login-button", () => {
   formValidation.validateForm(login).then((result) => {
     onSetFormErrors(result);

@@ -1,22 +1,8 @@
-import { Validators, createFormValidation } from "@lemoncode/fonk";
+import { Validators, createFormValidation } from '@lemoncode/fonk';
 const validationSchema = {
-  field: {
-    user: [
-      {
-        validator: Validators.required,
-        message: "Campo requerido test",
-      },
-      {
-        validator: Validators.email,
-        message: "Email no válido",
-      },
-    ],
-    password: [
-      {
-        validator: Validators.required,
-        message: "Campo requerido",
-      },
-    ],
-  },
+ field: {
+ user: [Validators.required, Validators.email],
+ password: [Validators.required],
+ },
 };
 export const formValidation = createFormValidation(validationSchema);
